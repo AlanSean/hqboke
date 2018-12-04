@@ -9,6 +9,10 @@
     <meta name="theme-color" content="#000000">
     <link rel="shortcut icon" href="//hqboke.cn/favicon.jpg">
     <title>怂包</title>
+    <link rel="manifest" href="/manifest.json">
+    <noscript>
+        您的禁用了js
+    </noscript>
     <style media="screen">
         *{
             margin: 0;
@@ -32,7 +36,6 @@
         m = new Twinkle("#fff", 14, 1000),
         a = new  Fireworks(document.getElementById("stage"));
     var x,y,time;
-console.log(v)
     $(window).on("mousemove", function(e) {
         // m.mouse.update(e.clientX, e.clientY)
         a.updateFireworks()
