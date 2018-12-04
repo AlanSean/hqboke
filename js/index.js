@@ -6,51 +6,35 @@ if ('serviceWorker' in navigator) {
       console.log('ServiceWorker 注册失败 ', err);
     });
   });
-}
-var CACHE_NAME = 'my-site-cache-v1';
-var urlsToCache = [
-    '/',
-    '/js/jq.js',
-    '/js/powder.js',
-    '/js/index.js'
-];
-
-window.addEventListener('install', function(event) {
-  // 执行安装步骤
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-        console.log('打开缓存');
-        return cache.addAll(urlsToCache);
-    })
-  );
-});
-
-self.addEventListener('fetch', function(event) {
-  event.respondWith(caches.match(event.request).then(function(response) {
-    // Cache hit - return response
-    if (response) {
-        return response;
+};
+var n = 100;
+var v = new Stage("stage"),
+    m = new Twinkle("#fff", 14, 1000),
+    a = new  Fireworks(document.getElementById("stage"));
+var x,y,time;
+$(window).on("mousemove", function(e) {
+    // m.mouse.update(e.clientX, e.clientY)
+    a.updateFireworks()
+})
+time = setInterval(()=>{
+    x = Math.random(1)*$('canvas').width();
+    y = Math.abs((Math.random(1)*$('canvas').height())-$('canvas').height()/2);
+    a.createFireworks(x,$('canvas').height(),x, y)
+},1000)
+document.addEventListener("webkitvisibilitychange", (event)=>{
+  var hidden = event.target.webkitHidden;
+      if (hidden){
+      clearInterval(time);
+    }else {
+        time = setInterval(()=>{
+            x = Math.random(1)*$('canvas').width();
+            y = Math.abs((Math.random(1)*$('canvas').height())-$('canvas').height()/2);
+            a.createFireworks(x,$('canvas').height(),x, y)
+        },1000)
     }
-    // 重要提示:克隆请求。请求是一个流和
-    // 只能消费一次。因为我们在消耗它
-    // 一次缓存一次浏览器获取，我们需要
-    // 克隆响应。
-    var fetchRequest = event.request.clone();
-    return fetch(fetchRequest).then(function(response) {
-        // 检查我们是否收到了有效的响应
-        if(!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-        }
-
-        // 重要提示:克隆响应。响应是一个流
-        //因为我们希望浏览器使用响应
-        //除了使用响应的缓存之外，我们还需要
-        //克隆它，这样我们就有了两条流。
-        var responseToCache = response.clone();
-        caches.open(CACHE_NAME).then(function(cache) {
-            cache.put(event.request, responseToCache);
-        });
-        return response;
-    });
-  }));
-});
+}, false);
+v.onUpdate(function(e) {
+    // m.render(e)
+    a.render();
+})
+v.update();
