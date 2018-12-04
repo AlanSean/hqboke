@@ -1,23 +1,25 @@
 {
-  "short_name": "people",
-  "name": "people",
-  "icons": [
-    {
-      "src": "https://hqboke.cn/favicon.jpg",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "https://hqboke.cn/favicon.jpg",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "https://hqboke.cn/favicon.jpg",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "background_color": "#2196F3",
-  "start_url": "index.html?launcher=true"
+    "short_name": "people",
+    "name": "people",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "icons": [
+        {
+            "src": "https://hqboke.cn/favicon.jpg",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "https://hqboke.cn/favicon.jpg",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "https://hqboke.cn/favicon.jpg",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "background_color": "#2196F3",
+    "start_url": "index.html?launcher=true"
 }
