@@ -2,13 +2,10 @@ importScripts('/cache-polyfill.js');
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
     '/',
-    '/index.html',
-    '/index.html?homescreen=1',
-    '/?homescreen=1',
-    // '/css/index.css',
+    '/css/index.css',
     '/js/jq.js',
     '/js/powder.js',
-    // '/js/index.js',
+    '/js/index.js',
     '/favicon.jpg',
     '/manifest.json',
 ];
@@ -27,4 +24,7 @@ self.addEventListener('fetch', function(event) {
             return response || fetch(event.request);
         })
     );
+});
+self.addEventListener('activate', function(event) {
+  console.log('Finally active. Ready to start serving content!');
 });
