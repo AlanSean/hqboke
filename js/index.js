@@ -1,12 +1,3 @@
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js').then(function(registration) {
-      console.log('ServiceWorker 注册成功: ', registration.scope);
-    }).catch(function(err) {
-      console.log('ServiceWorker 注册失败 ', err);
-    });
-  });
-};
 var n = 100;
 var v = new Stage("stage"),
     m = new Twinkle("#fff", 14, 1000),
