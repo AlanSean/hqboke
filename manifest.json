@@ -18,8 +18,15 @@
             "src": "https://hqboke.cn/favicon.jpg",
             "type": "image/png",
             "sizes": "192x192"
+        },
+        {
+            "src": "https://hqboke.cn/favicon.jpg",
+            "type": "image/png",
+            "sizes": "512x512"
         }
     ],
-    "background_color": "#2196F3",
+    "theme_color": "#fff",
+    "display":"browser",
+    "background_color":"#000",
     "start_url": "index.html?launcher=true"
 }
