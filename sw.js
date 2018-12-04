@@ -4,8 +4,8 @@ var urlsToCache = [
     '/',
     '/index.html',
     '/css/index.css',
-    // '/js/jq.js',
-    // '/js/powder.js',
+    '/js/jq.js',
+    '/js/powder.js',
     '/js/index.js',
     '/favicon.jpg',
     '/manifest.json',
@@ -22,6 +22,7 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
     event.respondWith(
         caches.match(event.request).then(function(response) {
+            console.log(event.request)
             return response || fetch(event.request);
         })
     );
