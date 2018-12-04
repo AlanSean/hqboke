@@ -20,9 +20,9 @@ self.addEventListener('install', function(event) {
     );
 });
 self.addEventListener('fetch', function(event) {
+    event.request['accept-encoding']= 'gzip, deflate, br';
     event.respondWith(
         caches.match(event.request).then(function(response) {
-            console.log(event.request)
             return response || fetch(event.request);
         })
     );
