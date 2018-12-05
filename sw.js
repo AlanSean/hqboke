@@ -28,10 +28,10 @@ self.addEventListener('activate', function(event) {
                     cacheList.map(function (cacheName) {
                         console.log('清理',cacheName);
                         return caches.delete(cacheName);
-                    });
+                    })
                 );
             });
-        ]);
+        ])
     );
 });
 self.addEventListener('fetch', function(event) {
