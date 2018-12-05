@@ -16,7 +16,7 @@ caches.keys().then(function (cacheList) {
         catch_name:CACHE_NAME + (v+1),
         old_catch_name:CACHE_NAME+v
     };
-}).then( res:{catch_name,old_catch_name} => {
+}).then( (res:{catch_name,old_catch_name}) => {
     self.addEventListener('install', function(event) {
       // 执行安装步骤
         event.waitUntil(
