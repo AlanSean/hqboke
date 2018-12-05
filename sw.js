@@ -20,19 +20,19 @@ self.addEventListener('install', function(event) {
     );
 });
 self.addEventListener('activate', function(event) {
-    event.waitUntil(
-        Promise.all([
-            // 清理旧版本
-            caches.keys().then(function (cacheList) {
-                return Promise.all(
-                    cacheList.map(function (cacheName) {
-                        console.log('清理',cacheName);
-                        return caches.delete(cacheName);
-                    })
-                );
-            })
-        ])
-    );
+    // event.waitUntil(
+    //     Promise.all([
+    //         // 清理旧版本
+    //         caches.keys().then(function (cacheList) {
+    //             return Promise.all(
+    //                 cacheList.map(function (cacheName) {
+    //                     console.log('清理',cacheName);
+    //                     return caches.delete(cacheName);
+    //                 })
+    //             );
+    //         })
+    //     ])
+    // );
 });
 self.addEventListener('fetch', function(event) {
     // event.request['accept-encoding']= 'gzip, deflate, br';
