@@ -2,20 +2,21 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8"/>
-    <link rel="fluid-icon" href="/favicon.jpg" title="GitHub">
+    <link rel="fluid-icon" href="./favicon.jpg" title="GitHub">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2">
-    <link rel="shortcut icon" href="/favicon.jpg">
+    <link rel="shortcut icon" href="./favicon.jpg">
     <title>怂包</title>
-    <link defer rel="manifest" href="/manifest.json">
+    <link defer rel="manifest" href="./manifest.json">
     <meta name ="theme-color" content="#000">
     <meta name="description" content="我就是试试">
-    <link defer rel="stylesheet" href="/css/index.css">
+    <link defer rel="stylesheet" href="./css/index.css">
     <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('sw.js').then(function(registration) {
                     console.log('ServiceWorker 注册成功: ', registration.scope);
+                    registration.update();
                 }).catch(function(err) {
                     console.log('ServiceWorker 注册失败 ', err);
                 });
@@ -29,7 +30,7 @@
     </noscript>
     <canvas id="stage" class="stage"></canvas>
 </body>
-<script src="/js/jq.js"></script>
-<script src="/js/powder.js"></script>
-<!-- <script defer src="/js/index.js" charset="utf-8"></script> -->
+<script src="./js/jq.js"></script>
+<script src="./js/powder.js"></script>
+<script defer src="./js/index.js" charset="utf-8"></script>
 </html>
