@@ -11,7 +11,6 @@ var urlsToCache = [
     './manifest.json',
 ];
 self.addEventListener('install', function(event) {
-    console.log(234)
   // 执行安装步骤
     event.waitUntil(
         caches.open(CACHE_NAME).then(function(cache) {
@@ -21,7 +20,7 @@ self.addEventListener('install', function(event) {
     self.skipWaiting();
 });
 self.addEventListener('activate', function(event) {
-    console.log('清理old_catch_name',event);
+    console.log('清理old_catch_name');
 });
 self.addEventListener('fetch', function(event) {
     event.respondWith(
