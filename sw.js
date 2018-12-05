@@ -19,14 +19,26 @@ self.addEventListener('install', function(event) {
         })
     );
 });
+self.addEventListener('activate', function(event) {
+    event.waitUntil(
+        Promise.all([
+            // 清理旧版本
+            caches.keys().then(function (cacheList) {
+                return Promise.all(
+                    cacheList.map(function (cacheName) {
+                        console.log('清理',cacheName);
+                        return caches.delete(cacheName);
+                    });
+                );
+            });
+        ]);
+    );
+});
 self.addEventListener('fetch', function(event) {
-    event.request['accept-encoding']= 'gzip, deflate, br';
+    // event.request['accept-encoding']= 'gzip, deflate, br';
     event.respondWith(
         caches.match(event.request).then(function(response) {
             return response || fetch(event.request);
         })
     );
-});
-self.addEventListener('activate', function(event) {
-  console.log('Finally active. Ready to start serving content!');
 });
