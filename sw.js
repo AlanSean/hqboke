@@ -13,8 +13,8 @@ var urlsToCache = [
 caches.keys().then(function (cacheList) {
     var v = cacheList.length>0 ?  Number(cacheList[0].split(CACHE_NAME)[1]) : 1;
     return {
-        name:CACHE_NAME + (v+1),
-        oldname:CACHE_NAME+v
+        catch_name:CACHE_NAME + (v+1),
+        old_catch_name:CACHE_NAME+v
     };
 }).then( res:{catch_name,old_catch_name} => {
     self.addEventListener('install', function(event) {
