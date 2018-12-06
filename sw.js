@@ -33,7 +33,7 @@ this.addEventListener('activate', function(event) {
 });
 self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.open(cacheName).then(cache => cache.match(event.request, {ignoreSearch: true})).then(response => {
+        caches.open(CACHE_NAME).then(cache => cache.match(event.request, {ignoreSearch: true})).then(response => {
           return response || fetch(event.request);
         })
       );
