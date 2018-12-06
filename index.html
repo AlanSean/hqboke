@@ -14,12 +14,14 @@
     <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').then(function(registration) {
-                    console.log('ServiceWorker 注册成功: ', registration.scope);
-                    registration.update();
-                }).catch(function(err) {
-                    console.log('ServiceWorker 注册失败 ', err);
-                });
+                navigator.serviceWorker.register('sw.js').then(function(reg) {
+                    window.reg = reg;
+                    console.log('ServiceWorker 注册成功: ', reg.scope);
+                    const version = '1.0.4';
+                    if (localStorage.getItem('sw_version') !== version) {
+                        reg.update().then(() => localStorage.setItem('sw_version', version));
+                    }
+                })
             });
         };
     </script>

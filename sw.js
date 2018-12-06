@@ -1,5 +1,4 @@
-importScripts('./cache-polyfill.js');
-var CACHE_NAME = 'www.hqboke.com-v1';
+var CACHE_NAME = 'v2';
 var urlsToCache = [
     '/',
     './index.html',
@@ -7,19 +6,35 @@ var urlsToCache = [
     './js/jq.js',
     './js/powder.js',
     './js/index.js',
-    './favicon.jpg',
     './manifest.json',
 ];
+
 self.addEventListener('install', function(event) {
+    console.log('instal')
     event.waitUntil(
         caches.open(CACHE_NAME).then(function(cache) {
             return cache.addAll(urlsToCache);
+        }).then(function(){
+            self.skipWaiting();
         })
     );
-    self.skipWaiting();
 });
-self.addEventListener('activate', function(event) {
-
+this.addEventListener('activate', function(event) {
+  // 声明缓存白名单，该名单内的缓存目录不会被生成
+    var cacheWhitelist = [CACHE_NAME];
+    console.log('发生更新');
+    event.waitUntil(
+        Promise.all([
+            clients.claim(),
+            caches.keys().then(function(keyList) {
+                return Promise.all(keyList.map(function(key) {
+                    if (cacheWhitelist.indexOf(key) === -1) {
+                        return caches.delete(key);
+                    }
+                }));
+            })
+        ])
+    );
 });
 self.addEventListener('fetch', function(event) {
     event.respondWith(
