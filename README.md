@@ -1,6 +1,7 @@
 ##Lighthouse谷歌扩展插件-评分测试项目
-目前全满分
-[]: https://hqboke,cn	"网站地址"
+    目前全满分
+
+    []: https://hqboke,cn "网站地址"
 
 ```
     serviceWorker配置
