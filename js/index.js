@@ -1,4 +1,3 @@
-alert('2134')
 var n = 100;
 var v = new Stage("stage"),
     m = new Twinkle("#fff", 14, 1000),

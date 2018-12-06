@@ -1,4 +1,4 @@
-var CACHE_NAME = 'v3';
+var CACHE_NAME = 'v4';
 var urlsToCache = [
     '/',
     './index.html',
@@ -15,6 +15,7 @@ self.addEventListener('install', function(event) {
         caches.open(CACHE_NAME).then(function(cache) {
             return cache.addAll(urlsToCache);
         }).then(function(){
+            console.log('skipWaiting');
             self.skipWaiting();
         })
     );
@@ -25,7 +26,7 @@ this.addEventListener('activate', function(event) {
     console.log('发生更新');
     event.waitUntil(
         Promise.all([
-            clients.claim(),
+            self.clients.claim(),
             caches.keys().then(function(keyList) {
                 return Promise.all(keyList.map(function(key) {
                     if (cacheWhitelist.indexOf(key) === -1) {
