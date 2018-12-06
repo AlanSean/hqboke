@@ -1,4 +1,4 @@
-[]: https://yq.aliyun.com/articles/117130?t=t1	"学习地址"
+[学习地址](https://yq.aliyun.com/articles/117130?t=t1)
 
 ##### 下载最新版的OpenSSL 库
 
