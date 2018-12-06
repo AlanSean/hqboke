@@ -16,6 +16,7 @@
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('sw.js').then(function(reg) {
                     window.reg = reg;
+                    reg.update();
                     console.log('ServiceWorker 注册成功: ', reg.scope);
                 })
             });

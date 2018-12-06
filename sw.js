@@ -1,4 +1,4 @@
-var CACHE_NAME = 'v1';
+var CACHE_NAME = 'v0';
 var urlsToCache = [
     '/',
     './index.html',
@@ -10,36 +10,31 @@ var urlsToCache = [
 ];
 
 self.addEventListener('install', function(event) {
-    console.log('instal')
     event.waitUntil(
         caches.open(CACHE_NAME).then(function(cache) {
-            console.log('skipWaiting');
-            self.skipWaiting();
             return cache.addAll(urlsToCache);
+        }).then(function(){
+            self.skipWaiting();
         })
     );
 });
 this.addEventListener('activate', function(event) {
-  // 声明缓存白名单，该名单内的缓存目录不会被生成
-    var cacheWhitelist = [CACHE_NAME];
-    console.log('发生更新');
-    event.waitUntil(
-        Promise.all([
-            self.clients.claim(),
-            caches.keys().then(function(keyList) {
-                return Promise.all(keyList.map(function(key) {
-                    if (cacheWhitelist.indexOf(key) === -1) {
-                        return caches.delete(key);
-                    }
-                }));
-            })
-        ])
-    );
+    var CACHE_NAMES = [CACHE_NAME];
+     event.waitUntil(
+        self.clients.claim(),
+        caches.keys().then(function(keyList) {
+            return Promise.all(keyList.map(function(key) {
+                if (CACHE_NAMES.indexOf(key) === -1) {
+                    return caches.delete(key);
+                }
+            }));
+        })
+    )
 });
 self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.match(event.request).then(function(response) {
-            return response || fetch(event.request);
+        caches.open(cacheName).then(cache => cache.match(event.request, {ignoreSearch: true})).then(response => {
+          return response || fetch(event.request);
         })
-    );
+      );
 });
