@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <link rel="dns-prefetch" href="//www,hqboke.cn">
     <meta charset="utf-8"/>
     <link rel="fluid-icon" href="./favicon.jpg" title="GitHub">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2">
     <link rel="shortcut icon" href="./favicon.jpg">
     <title>怂包</title>
-    <link defer rel="manifest" href="./manifest.json">
+    <link  rel="manifest" href="./manifest.json">
     <meta name ="theme-color" content="#000">
     <meta name="description" content="我就是试试">
-    <link defer rel="stylesheet" href="./css/index.css">
+    <link href="//css/index.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" as="script" href="//js/jq.js">
+    <link rel="preload" as="script" href="//js/powder.js">
+    <link rel="preload" as="script" href="//js/index.js">
+    <script src="//js/jq.js"></script>
+    <script src="//js/powder.js"></script>
     <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
@@ -29,7 +35,6 @@
     </noscript>
     <canvas id="stage" class="stage"></canvas>
 </body>
-<script src="./js/jq.js"></script>
-<script src="./js/powder.js"></script>
-<script defer src="./js/index.js" charset="utf-8"></script>
+
+<script src="//js/index.js" charset="utf-8"></script>
 </html>

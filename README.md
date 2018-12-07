@@ -1,4 +1,4 @@
-##Lighthouse谷歌扩展插件-评分测试项目
+## Lighthouse谷歌扩展插件-评分测试项目
 
 目前全满分
 
@@ -15,3 +15,8 @@
 
 ```
 
+
+
+### 日志
+    新增 link rel=dns-prefetch href=https://hqboke.cn  DNS预获取 减少dns请求
+    新增 link  rel="preload" css|js预加载

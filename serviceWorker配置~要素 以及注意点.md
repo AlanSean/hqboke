@@ -1,4 +1,4 @@
-####serviceWorker配置~要素 以及注意点
+#### serviceWorker配置~要素 以及注意点
 ```
     必须有个缓存名称
         CACHE_NAME  想清理缓存必须修改
