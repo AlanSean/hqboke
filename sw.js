@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v1.0.2';
+const CACHE_NAME = 'v1.0.3';
 var urlsToCache = [
     '/',
     './index.html',
@@ -19,12 +19,11 @@ self.addEventListener('install', function(event) {
     );
 });
 this.addEventListener('activate', function(event) {
-    var CACHE_NAMES = [CACHE_NAME];
      event.waitUntil(
         self.clients.claim(),
         caches.keys().then(function(keyList) {
             return Promise.all(keyList.map(function(key) {
-                if (CACHE_NAMES !== key) {
+                if (CACHE_NAME !== key) {
                     return caches.delete(key);
                 }
             }));
