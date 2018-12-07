@@ -29,3 +29,4 @@ v.onUpdate(function(e) {
     a.render();
 })
 v.update();
+console.log(1234)
