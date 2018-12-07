@@ -1,6 +1,10 @@
 ##Lighthouse谷歌扩展插件-评分测试项目
+
 目前全满分
+
 [网站地址](https://www.hqboke,cn)
+=======
+
 
 ```
     serviceWorker配置
@@ -10,3 +14,4 @@
     添加noscript（禁用js提示）
 
 ```
+
