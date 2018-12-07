@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v1.0.1';
+const CACHE_NAME = 'v1.0.2';
 var urlsToCache = [
     '/',
     './index.html',
@@ -24,7 +24,7 @@ this.addEventListener('activate', function(event) {
         self.clients.claim(),
         caches.keys().then(function(keyList) {
             return Promise.all(keyList.map(function(key) {
-                if (CACHE_NAMES.indexOf(key) === -1) {
+                if (CACHE_NAMES !== key) {
                     return caches.delete(key);
                 }
             }));
