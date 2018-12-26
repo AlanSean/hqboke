@@ -8,7 +8,6 @@
     cd openssl-1.1.0f
     ./config --prefix=/usr/local/openssl
     make && make install
-    
 ```
 ##### 替换openssl版本库
 
