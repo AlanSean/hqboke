@@ -72,6 +72,11 @@ div>*{
 .show{
     width: 300px;
     height: 350px;
+    webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
     animation: test1 0.6s,test 1s cubic-bezier(0.54, 0.01, 0.88, 0.57) infinite;
 }
 .hidden{
