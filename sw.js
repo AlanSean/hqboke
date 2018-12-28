@@ -1,10 +1,10 @@
 "use strict";
 var precacheConfig = [
-        ['index.html','1wqawsd'],
-        ['css/index.css','1sqeqw'],
+        ['index.html','1wqsqasdasdasdawsd'],
+        ['css/index.css','1sqasdaeqw'],
         ['js/jq.js','1sdfsf'],
         ['js/powder.js','12e1ds'],
-        ['js/index.js','1asdsdfa'],
+        ['js/index.js','1asdasdasdsdfa'],
         ['manifest.json','1vcvs2'],
         ['img/head.jpg','12e1ds12e1ds'],
         ['favicon.jpg','1vcasdasds2'],
