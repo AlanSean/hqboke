@@ -38,17 +38,17 @@ if ('serviceWorker' in navigator) {
 // v.update();
 //
 //
-// ;(function(){
-//     var flag = false;
-//     $('main>div')[0].addEventListener('click',function(e){
-//         e.stopPropagation();
-//         flag = true;
-//         this.className = 'show';
-//     });
-//     document.addEventListener('click',function(){
-//         if(flag){
-//             flag = false;
-//             $('main>div')[0].className = 'hidden';
-//         }
-//     });
-// })();
+;(function(){
+    var flag = false;
+    $('main>div')[0].addEventListener('click',function(e){
+        e.stopPropagation();
+        flag = true;
+        this.className = 'show';
+    });
+    document.addEventListener('click',function(){
+        if(flag){
+            flag = false;
+            $('main>div')[0].className = 'hidden';
+        }
+    });
+})();
