@@ -5,7 +5,7 @@ var precacheConfig = [
         ['css/index.css','0.03'],
         ['js/jq.js','0.02'],
         ['js/powder.js','0.02'],
-        ['js/index.js','0.02'],
+        ['js/index.js','0.03'],
         ['manifest.json','0.02'],
         ['img/head.jpg','0.02'],
         ['favicon.jpg','0.02'],
