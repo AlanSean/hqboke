@@ -1,7 +1,9 @@
 {
     "short_name": "people",
     "name": "people",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "description":"PWA实战，Lighthouse测试",
+"keywords":"PWA实战，Lighthouse测试",
     "manifest_version": 2,
     "icons": [
         {
@@ -28,5 +30,5 @@
     "theme_color": "#fff",
     "display":"standalone",
     "background_color":"#000",
-    "start_url": "index.html?launcher=true"
+    "start_url": "/?launcher=true"
 }
