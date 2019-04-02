@@ -40,7 +40,9 @@ v.update();
 
 ;(function(){
     // var flag = true;
-    $('main>div')[0].className = 'show';
+    setTimeout(()=>{
+        $('main>div')[0].className = 'show';
+    },500)
     //
     // $('main>div')[0].addEventListener('click',function(e){
     //     e.stopPropagation();
