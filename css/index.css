@@ -18,6 +18,30 @@ body {
     background: #000;
     color: #fff;
 }
+h1{
+    position: absolute;
+    width: 500px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    color: #cd4606;
+    animation: test3 1.5s cubic-bezier(0.54, 0.01, 0.88, 0.57) infinite;
+    font-size: 80px;
+    text-shadow:
+        0 0 1px #fefcc9,
+        0 -2px 4px #feec85,
+        0 -3px 5px #ffae34,
+        0 -4px 5px #ec760c,
+        0 -5px 6px #cd4606,
+        0 -6px 7px #973716,
+        0 -7px 7px #8a2200,
+        0 -8px 8px #451b0e,
+        0 -9px 6px #390700;
+}
 .main {
     position: absolute;
     width: 300px;
@@ -311,4 +335,22 @@ nav>a:hover{
             -1px -9px 6px #390700;
     }
 
+}
+
+
+
+footer{
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    width: 100%;
+}
+footer a{
+    display: block;
+    width: 100%;
+    color: #fff;
 }
