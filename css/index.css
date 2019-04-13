@@ -29,18 +29,21 @@ h1{
     text-align: center;
     font-weight: bold;
     color: #cd4606;
-    animation: test3 1.5s cubic-bezier(0.54, 0.01, 0.88, 0.57) infinite;
+    background-image: -webkit-linear-gradient(left,
+        #feec85,
+        #ffae34 25%,
+        #ec760c 50%,
+        #cd4606 75%,
+        #feec85 );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+    animation: text3 3s infinite linear;
     font-size: 80px;
-    text-shadow:
-        0 0 1px #fefcc9,
-        0 -2px 4px #feec85,
-        0 -3px 5px #ffae34,
-        0 -4px 5px #ec760c,
-        0 -5px 6px #cd4606,
-        0 -6px 7px #973716,
-        0 -7px 7px #8a2200,
-        0 -8px 8px #451b0e,
-        0 -9px 6px #390700;
+}
+@keyframes text3 {
+    0%  { background-position: 0 0;}
+    100% { background-position: -200% 0;}
 }
 .main {
     position: absolute;
@@ -53,7 +56,7 @@ h1{
     margin: auto;
 
 }
-div {
+main> div {
     position: absolute;
     width: 3px;
     height: 2px;
@@ -79,16 +82,52 @@ div {
         inset 0 -3.5px 20px 6px #390700;
     text-align: center;
 }
-img{
+.head{
+    background: #1D1F20;
+    position: relative;
+    border-radius: 50%;
+    width:80px;
+    height: 80px;
+    margin:0 auto;
+    margin: 20px auto 0;
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin:0 auto;
-    opacity: 0;
-    z-index: -1;
-    margin: 20px auto 0;
 }
-div>*{
+
+.head::after{
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    height: calc(100% + 6px);
+    width: calc(100% + 6px);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: 50%;
+    z-index: -1;
+    animation: imgBorder 3s ease alternate infinite;
+
+    background-size: 300% 300%;
+}
+.head > img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+
+@keyframes imgBorder {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+main>div>*{
     position: relative;
     z-index: -1;
     display: block;
@@ -112,6 +151,9 @@ div>*{
     opacity: 1;
     z-index: 1;
     transition: opacity 0.3s 0.6s;
+}
+.show>.head > img{
+    opacity: 1;
 }
 @-webkit-keyframes test1 {
     0% {
