@@ -301,12 +301,12 @@ button:hover{
     color: #cd4606;
     animation: test3 1.5s cubic-bezier(0.54, 0.01, 0.88, 0.57) infinite;
 }
-nav{
+main >div>nav{
     display: flex;
     justify-content:space-around;
 }
 
-nav >a{
+main >div>nav >a{
     display: inline-block;
     text-align: center;
     color: #fff;
