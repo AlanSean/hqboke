@@ -1,7 +1,5 @@
 "use strict";
 var precacheConfig = [
-        ['/','0.02'],
-        ['index.html','0.05'],
         ['css/index.css','0.05'],
         ['js/jq.js','0.05'],
         ['js/powder.js','0.03'],
