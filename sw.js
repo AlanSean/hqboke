@@ -7,6 +7,7 @@ var precacheConfig = [
         ['manifest.json','0.04'],
         ['img/head.jpg','0.04'],
         ['favicon.jpg','0.04'],
+        ['css/bg.css','0.01'],
     ],
     cacheName = "sw-precache-v1-www.hqboke.cn-" + (self.registration ? self.registration.scope : ""),
     ignoreUrlParametersMatching = [/^utm_/],
