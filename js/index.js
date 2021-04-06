@@ -55,4 +55,5 @@ if ('serviceWorker' in navigator) {
     //         $('main>div')[0].className = 'hidden';
     //     }
     // });
+
 })();
